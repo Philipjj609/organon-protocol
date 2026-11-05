@@ -1,0 +1,22 @@
+[package]
+name = "organon-protocol-cli"
+description = "Validate organon protocol streams and print JSON schemas."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[[bin]]
+name = "organon-protocol"
+path = "src/main.rs"
+
+[dependencies]
+organon-protocol = { path = "../organon-protocol", features = ["schema"] }
+anyhow = "1"
+schemars = "0.8"
+clap = { version = "4", features = ["derive"] }
+serde_json = "1"
+
+[lints]
+workspace = true

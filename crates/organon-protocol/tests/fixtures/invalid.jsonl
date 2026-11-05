@@ -1,0 +1,7 @@
+not json at all
+{"type": "banana"}
+{"type": "claim", "id": "c_de0580a92a66a730", "about": "repo:zhaosenlin12-creator/MotionSites", "relation": "provides", "value": {"anchor": "concept:something-else"}, "scope": "world", "basis": "inferred", "stance": "is", "confidence": 0.6, "rationale": "Prompt collection for motion-rich sites.", "evidence": [[{"source": "s_51518e9fc5c3bda7"}]], "author": "claude-opus-5-5"}
+{"type": "claim", "id": "c_de0580a92a66a730", "about": "repo:zhaosenlin12-creator/MotionSites", "relation": "provides", "value": {"anchor": "concept:web-effects"}, "scope": "world", "basis": "stated", "stance": "is", "confidence": 0.6, "rationale": "Prompt collection for motion-rich sites.", "evidence": [[{"source": "s_51518e9fc5c3bda7"}]], "author": "claude-opus-5-5"}
+{"type": "source", "id": "x", "kind": "youtube-video", "uri": "https://youtube.com/watch?v=example", "title": "Example talk", "captured_at": "2026-11-05T10:00:00Z", "content_hash": "abababababababababababababababababababababababababababababababab", "files": {"captions": "captions.en.json3"}, "meta": {"duration_s": 3725}, "produced_by": {"organ": "organon-video", "version": "0.1.0", "tool": "yt-dlp"}}
+{"type": "anchor", "id": "Concept x", "name": "bad"}
+{"type": "observation", "id": "o_52b4f23fc2d3e573", "source": "s_0123456789abcdef", "kind": "transcript_segment", "at": {"t0": 754.2, "t1": 761.8}, "value": {"text": "tampered"}, "produced_by": {"organ": "organon-video", "version": "0.1.0", "tool": "captions:manual"}, "confidence": 0.98}
