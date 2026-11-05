@@ -317,13 +317,13 @@ impl Relation {
         let (family, functional, default_stance) = match self.0.as_str() {
             "described_as" | "homepage" | "license" | "language" | "stars" | "owned_by"
             | "documented_in" | "title" | "likes" | "followers" | "downloads"
-            | "capture_status" | "posted_by" | "pricing" | "has_media" | "has_article" => {
-                (F::Meta, true, Stance::Is)
-            }
+            | "capture_status" | "posted_by" | "pricing" | "has_media" | "has_article"
+            | "channel" | "duration" | "has_captions" => (F::Meta, true, Stance::Is),
             "tagged" => (F::Topic, false, Stance::Is),
             "starred_by" | "saved_by" | "note" | "saved_group" => (F::Personal, false, Stance::Is),
             "links_to" | "listed_in" | "mentions" => (F::Mention, false, Stance::Is),
-            "says" | "teaches" | "claims" => (F::Message, false, Stance::Is),
+            "says" | "teaches" | "claims" | "shows" => (F::Message, false, Stance::Is),
+            "speaker" | "speaks_in" => (F::Mention, false, Stance::Is),
             "used_at_stage" | "precedes" => (F::Workflow, false, Stance::Is),
             "provides" | "implements" => (F::Capability, false, Stance::Is),
             "part_of" | "instance_of" => (F::Taxonomy, false, Stance::Is),

@@ -142,3 +142,10 @@ fn costs_add_up() {
         (Some(15), Some(0.5), Some(2.0), Some("m"))
     );
 }
+
+#[test]
+fn video_relations_have_families() {
+    assert_eq!(Relation::from("shows").info().family, Family::Message);
+    assert_eq!(Relation::from("speaker").info().family, Family::Mention);
+    assert!(Relation::from("duration").info().functional);
+}
