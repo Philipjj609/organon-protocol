@@ -120,6 +120,16 @@ fn locations_parse_by_shape() {
     assert!(matches!(p, Location::Page { page: 3, .. }));
     let f: Location = serde_json::from_str(r#"{"frame":84}"#).unwrap();
     assert!(matches!(f, Location::Frame { frame: 84 }));
+    let x: Location = serde_json::from_str(r#"{"start":120,"end":245}"#).unwrap();
+    assert_eq!(
+        x,
+        Location::Text {
+            start: 120,
+            end: 245
+        }
+    );
+    let w: Location = serde_json::from_str("{}").unwrap();
+    assert_eq!(w, Location::Whole {});
 }
 
 #[test]

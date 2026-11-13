@@ -22,7 +22,8 @@ fn valid_stream_passes() {
             "anchor",
             "claim",
             "proposal",
-            "episode"
+            "episode",
+            "observation"
         ]
     );
 }

@@ -21,6 +21,10 @@ pub enum Location {
         #[serde(default, skip_serializing_if = "Option::is_none")]
         bbox: Option<[f64; 4]>,
     },
+    /// A character range `[start, end)` in the source's stored text (Unicode scalar values),
+    /// e.g. a quoted passage of a web page or paper. Offsets refer to the text file the source
+    /// lists under `files["text"]`, so they stay valid as long as that file does.
+    Text { start: u64, end: u64 },
     /// A single video frame, by index.
     Frame { frame: u64 },
     /// The whole source.
@@ -44,6 +48,8 @@ impl ObservationKind {
     pub const MOMENT: &'static str = "moment";
     /// A reason to look at the picture: deictic phrase, slide change, chapter start.
     pub const VISUAL_CUE: &'static str = "visual_cue";
+    /// A verbatim passage of a text source, located by `Location::Text`: what a claim quotes.
+    pub const PASSAGE: &'static str = "passage";
 
     #[must_use]
     pub fn new(s: impl Into<String>) -> Self {
