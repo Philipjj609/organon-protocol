@@ -149,3 +149,31 @@ fn video_relations_have_families() {
     assert_eq!(Relation::from("speaker").info().family, Family::Mention);
     assert!(Relation::from("duration").info().functional);
 }
+
+/// Regression: serde_json's default float parser is not exact, so a time like
+/// 96.79899999999999 came back as a neighbouring float and the observation's id no longer
+/// matched its content after a trip through a file. Found ingesting a real video into mneme.
+#[test]
+fn awkward_floats_survive_a_round_trip_with_the_same_id() {
+    let o = Observation::new(
+        SourceId::of(b"video"),
+        ObservationKind::new(ObservationKind::TRANSCRIPT_SEGMENT),
+        Location::Time {
+            t0: 86.32,
+            t1: 96.798_999_999_999_99,
+        },
+        serde_json::json!({"text": "x", "share": 0.1_f32}),
+        ProducedBy {
+            organ: "t".into(),
+            version: "0".into(),
+            tool: None,
+            model: None,
+        },
+    );
+    let back: Observation = serde_json::from_str(&serde_json::to_string(&o).unwrap()).unwrap();
+    assert_eq!(
+        Observation::compute_id(&back.source, &back.kind, &back.at, &back.value),
+        o.id
+    );
+    assert_eq!(back, o);
+}
