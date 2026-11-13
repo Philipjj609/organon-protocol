@@ -100,23 +100,33 @@ macro_rules! hash_id {
 
 hash_id!(
     /// A captured source (`s_…`).
-    SourceId, "s_", "source id"
+    SourceId,
+    "s_",
+    "source id"
 );
 hash_id!(
     /// A perception observation (`o_…`).
-    ObservationId, "o_", "observation id"
+    ObservationId,
+    "o_",
+    "observation id"
 );
 hash_id!(
     /// A claim (`c_…`): hash of its canonical content, see [`crate::Claim::compute_id`].
-    ClaimId, "c_", "claim id"
+    ClaimId,
+    "c_",
+    "claim id"
 );
 hash_id!(
     /// A memory commit (`m_…`).
-    CommitId, "m_", "commit id"
+    CommitId,
+    "m_",
+    "commit id"
 );
 hash_id!(
     /// An episode (`e_…`).
-    EpisodeId, "e_", "episode id"
+    EpisodeId,
+    "e_",
+    "episode id"
 );
 
 /// A thing with identity and continuity, named `kind:name` (e.g. `repo:owner/name`,
