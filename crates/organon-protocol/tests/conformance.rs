@@ -23,7 +23,8 @@ fn valid_stream_passes() {
             "claim",
             "proposal",
             "episode",
-            "observation"
+            "observation",
+            "episode"
         ]
     );
 }

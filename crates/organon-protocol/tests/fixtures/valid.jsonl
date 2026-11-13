@@ -5,3 +5,4 @@
 {"type":"proposal","author":"claude-opus-5-5","message":"example","evidence":"auto","claims":[["repo:a/b","provides","concept:web-effects",0.7],{"about":"repo:a/b","relation":"purpose","value":"An example.","basis":"stated"}]}
 {"type":"episode","id":"e_0123456789abcdef","kind":"recall","task":"how to make a site not look generic","started":"2026-11-05T10:00:00Z","outcome":"good","cost":{"tokens_in":1200,"model":"claude-haiku-5-5","seconds":1.5}}
 {"type":"observation","id":"o_d5dd8e5192342a98","source":"s_0123456789abcdef","kind":"passage","at":{"start":120,"end":176},"value":{"text":"Only 39-77% factual accuracy against cited sources"},"produced_by":{"organ":"organon-research","version":"0.1.0"}}
+{"type":"episode","id":"e_00000000000000aa","kind":"task","task":"which OCR reads code from video frames","started":"2026-11-13T09:00:00Z","ended":"2026-11-13T09:40:00Z","outcome":"partial","cost":{"tokens_out":21000,"model":"claude-opus-5-5","seconds":2400.0,"usd":4.2}}

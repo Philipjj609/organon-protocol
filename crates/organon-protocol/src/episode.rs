@@ -55,6 +55,9 @@ pub enum EpisodeType {
     Perceive,
     Digest,
     Capture,
+    /// A declared piece of work with a budget (organon intelligence); its cost is the sum of
+    /// everything done for it.
+    Task,
 }
 
 #[derive(Debug, Clone, Copy, Default, PartialEq, Eq, Serialize, Deserialize)]

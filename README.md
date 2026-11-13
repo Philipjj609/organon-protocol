@@ -23,7 +23,7 @@ On the wire, it's **JSON Lines**, one `Message` per line, tagged by `"type"`:
 
 Rust:
 ```toml
-organon-protocol = { git = "https://github.com/Philipjj609/organon-protocol", tag = "v0.1.2" }
+organon-protocol = { git = "https://github.com/Philipjj609/organon-protocol", tag = "v0.1.4" }
 ```
 ```rust
 use organon_protocol::{Claim, Value, Basis, AnchorId};
